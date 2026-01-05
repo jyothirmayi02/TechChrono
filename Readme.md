@@ -4,8 +4,8 @@ TechChrono is a web application where students can explore and register for tech
 
 # Built with:
 
-Node.js + Express (backend API)
-HTML, CSS, JavaScript (and React where needed)
+Node.js + Express (backend API)<br>
+HTML, CSS, JavaScript (and React where needed)<br>
 MySQL (or compatible DB) for persistent storage
 
 # Features
