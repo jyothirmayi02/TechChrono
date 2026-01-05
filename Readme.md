@@ -1,45 +1,32 @@
-TechChrono
+# TechChrono
 
 TechChrono is a web application where students can explore and register for technical events, and organizers can create and manage events easily.
 
-Built with:
+# Built with:
 
 Node.js + Express (backend API)
-
 HTML, CSS, JavaScript (and React where needed)
-
 MySQL (or compatible DB) for persistent storage
 
-Features
+# Features
+
 Student Features
-
 Create an account and log in
-
 Browse all events
-
 View event details
-
 Register for events
-
 Track events they have registered for
-
 Manage their profile
-
-Organizer Features
-
 Create new events
-
 View all created events
-
 Edit or delete events
-
 Monitor registrations
 
-Project Structure
+# Project Structure
 techchrono/
 │
-├── node_modules/
-├── public/
+├── node_modules/<br>
+├── public/<br>
 │   ├── scripts/                 # JavaScript logic
 │   ├── styles/                  # CSS files
 │   ├── create-event.html        # Create new event page
