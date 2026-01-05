@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechChrono - Discover Tech Events in Hyderabad</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>TechChrono</span>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search events..." id="searchInput">
+                <button type="button" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" onclick="window.location.href='/login'">
+                    Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero home-centered">
+        <div class="hero-content home-center-block">
+            <h1 class="hero-title">
+                Discover Amazing <span class="gradient-text">Tech Events</span>
+            </h1>
+            <p class="hero-subtitle">
+                Join the vibrant tech community and explore events from colleges, clubs, and organizations across the city.
+            </p>
+            <div class="hero-actions home-hero-actions">
+                <button class="btn btn-primary btn-lg" onclick="window.location.href='/explore'">
+                    <i class="fas fa-compass"></i>
+                    Explore Events
+                </button>
+                <button class="btn btn-outline btn-lg" onclick="window.location.href='/signup'">
+                    <i class="fas fa-users"></i>
+                    Join Community
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose TechChrono?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Easy Discovery</h3>
+                    <p>Find tech events from colleges, clubs, and organizations all in one place</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location Based</h3>
+                    <p>Discover events happening near you with integrated Google Maps</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Driven</h3>
+                    <p>Connect with like-minded individuals and join discussions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-plus"></i>
+                    </div>
+                    <h3>Create Events</h3>
+                    <p>Host your own tech events and reach the community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Join the Tech Community?</h2>
+                <p>Start exploring events and connecting with fellow tech enthusiasts today!</p>
+                <button class="btn-hero" onclick="window.location.href='/signup'">
+                    <i class="fas fa-rocket"></i>
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>TechChrono</span>
+                    </div>
+                    <p>Connecting the tech community in Hyderabad</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/explore">Explore Events</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@techchrono.com</li>
+                        <li><i class="fas fa-phone"></i> +91 12345 67890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hyderabad, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechChrono. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/home.js"></script>
+</body>
+</html>

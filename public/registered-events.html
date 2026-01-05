@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Events - TechChrono</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/registered-events.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>TechChrono</span>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search registered events..." id="searchInput">
+                <button type="button" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-primary" onclick="window.location.href='/explore'">
+                    <i class="fas fa-compass"></i>
+                    Explore Events
+                </button>
+                <button class="btn-secondary" onclick="window.location.href='/dashboard'">
+                    <i class="fas fa-arrow-left"></i>
+                    Dashboard
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Registered Events</h1>
+                <p>Events you've registered for and are planning to attend</p>
+            </div>
+
+            <div class="events-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalRegistrations">0</h3>
+                        <p>Total Registrations</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="upcomingEvents">0</h3>
+                        <p>Upcoming Events</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-money-bill"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="freeEvents">0</h3>
+                        <p>Free Events</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="events-section">
+                <div class="section-header">
+                    <h2>Your Registrations</h2>
+                    <div class="filter-tabs">
+                        <button class="tab-btn active" data-filter="all">All</button>
+                        <button class="tab-btn" data-filter="upcoming">Upcoming</button>
+                        <button class="tab-btn" data-filter="past">Past</button>
+                        <button class="tab-btn" data-filter="today">Today</button>
+                    </div>
+                </div>
+
+                <div class="events-grid" id="eventsGrid">
+                    <!-- Events will be loaded here -->
+                </div>
+
+                <div class="loading" id="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    Loading your registrations...
+                </div>
+
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>No Registered Events Yet</h3>
+                    <p>Explore and register for exciting tech events happening in Hyderabad!</p>
+                    <button class="btn-primary" onclick="window.location.href='/explore'">
+                        <i class="fas fa-compass"></i>
+                        Explore Events
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/registered-events.js"></script>
+</body>
+</html>

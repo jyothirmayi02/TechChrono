@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Events - TechChrono</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/explore.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>TechChrono</span>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search events..." id="searchInput">
+                <button type="button" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="nav-actions" id="navActions">
+                <!-- Dynamic content based on login status -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Filters Section -->
+            <section class="filters-section">
+                <div class="filters-header">
+                    <h1>Explore Tech Events</h1>
+                    <p>Discover amazing events happening in Hyderabad</p>
+                </div>
+                <div class="filters-bar">
+                    <div class="filter-group">
+                        <label>Category:</label>
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="seminar">Seminar</option>
+                            <option value="hackathon">Hackathon</option>
+                            <option value="conference">Conference</option>
+                            <option value="meetup">Meetup</option>
+                            <option value="webinar">Webinar</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Type:</label>
+                        <select id="typeFilter">
+                            <option value="">All Types</option>
+                            <option value="free">Free</option>
+                            <option value="paid">Paid</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date:</label>
+                        <select id="dateFilter">
+                            <option value="">All Dates</option>
+                            <option value="today">Today</option>
+                            <option value="tomorrow">Tomorrow</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                    <button class="btn-secondary" id="clearFilters">
+                        <i class="fas fa-times"></i>
+                        Clear Filters
+                    </button>
+                </div>
+            </section>
+
+            <!-- Events Section -->
+            <section class="events-section">
+                <div class="events-layout">
+                    <!-- Events List -->
+                    <div class="events-list">
+                        <div class="events-header">
+                            <h2>Events</h2>
+                            <div class="view-options">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="events-grid" id="eventsGrid">
+                            <!-- Event cards will be loaded here -->
+                        </div>
+                        <div class="loading" id="loading">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            Loading events...
+                        </div>
+                    </div>
+
+                    <!-- Event Details Panel -->
+                    <div class="event-details-panel" id="eventDetailsPanel">
+                        <div class="panel-header">
+                            <h3>Event Details</h3>
+                            <button class="close-panel" id="closePanelBtn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="panel-content" id="panelContent">
+                            <p class="empty-state">Select an event to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Event Details Modal 
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Event Details</h2>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                 Event details will be loaded here 
+            </div>
+        </div>
+    </div>-->
+
+    <!-- Discussion Modal 
+    <div class="modal" id="discussionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Discussion Forum</h2>
+                <button class="close-modal" id="closeDiscussionModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="discussion-list" id="discussionList">
+                     Discussions will be loaded here 
+                </div>
+                <div class="discussion-form" id="discussionForm">
+                    <textarea placeholder="Join the discussion..." id="discussionMessage"></textarea>
+                    <button class="btn-primary" id="postDiscussion">
+                        <i class="fas fa-paper-plane"></i>
+                        Post
+                    </button>
+                </div> 
+            </div>
+        </div>
+    </div>-->
+
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/explore.js"></script>
+</body>
+</html>

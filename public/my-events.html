@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - TechChrono</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/create-event.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>TechChrono</span>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-secondary" onclick="window.location.href='/dashboard'">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Dashboard
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="create-event-header">
+                <h1>Create New Event</h1>
+                <p>Share your amazing tech event with the community</p>
+            </div>
+
+            <form class="create-event-form" id="createEventForm" enctype="multipart/form-data">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Basic Information
+                    </h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="title">Event Title *</label>
+                            <input type="text" id="title" name="title" required placeholder="Enter event title">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="category">Category *</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select Category</option>
+                                <option value="workshop">Workshop</option>
+                                <option value="seminar">Seminar</option>
+                                <option value="hackathon">Hackathon</option>
+                                <option value="conference">Conference</option>
+                                <option value="meetup">Meetup</option>
+                                <option value="webinar">Webinar</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" name="description" required rows="4" placeholder="Describe your event in detail..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="image">Event Image</label>
+                        <div class="file-upload">
+                            <input type="file" id="image" name="image" accept="image/*">
+                            <div class="file-upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload or drag and drop</p>
+                                <small>PNG, JPG, GIF up to 5MB</small>
+                            </div>
+                            <div class="image-preview" id="imagePreview"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date & Time -->
+                <div class="form-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        Date & Time
+                    </h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Event Date *</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">Event Time *</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="form-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </h2>
+                    
+                    <div class="form-group">
+                        <label for="location">Venue/Address *</label>
+                        <input type="text" id="location" name="location" required placeholder="Enter venue name or address">
+                        <small>This will be used to show location on Google Maps</small>
+                    </div>
+                </div>
+
+                <!-- Registration -->
+                <div class="form-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-ticket-alt"></i>
+                        Registration Details
+                    </h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="isPaid" name="is_paid">
+                                <span class="checkmark"></span>
+                                This is a paid event
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row" id="paidEventDetails" style="display: none;">
+                        <div class="form-group">
+                            <label for="price">Registration Fee (₹) *</label>
+                            <input type="number" id="price" name="price" min="0" step="0.01" placeholder="0.00">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="maxParticipants">Maximum Participants</label>
+                        <input type="number" id="maxParticipants" name="max_participants" min="1" placeholder="Leave empty for unlimited">
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="form-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-address-book"></i>
+                        Contact Information
+                    </h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactEmail">Contact Email *</label>
+                            <input type="email" id="contactEmail" name="contact_email" required placeholder="contact@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone">Contact Phone</label>
+                            <input type="tel" id="contactPhone" name="contact_phone" placeholder="+91 12345 67890">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="window.location.href='/dashboard'">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-calendar-plus"></i>
+                        Create Event
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/create-event.js"></script>
+</body>
+</html>

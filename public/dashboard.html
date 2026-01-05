@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TechChrono</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-calendar-alt"></i>
+                <span>TechChrono</span>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search events..." id="searchInput">
+                <button type="button" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-primary" onclick="window.location.href='/create-event'">
+                    <i class="fas fa-plus"></i>
+                    Create Event
+                </button>
+                <div class="nav-notifications">
+                    <button class="notification-btn" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge" id="notificationBadge">0</span>
+                    </button>
+                    <div class="notification-dropdown" id="notificationDropdown">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <button class="mark-all-read" id="markAllRead">Mark all as read</button>
+                        </div>
+                        <div class="notification-list" id="notificationList">
+                            <!-- Notifications will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-dropdown">
+                    <button class="profile-btn" id="profileBtn">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="userName">User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="profileDropdown">
+                        <a href="/registered-events">
+                            <i class="fas fa-ticket-alt"></i>
+                            Registered Events
+                        </a>
+                        <a href="/my-events">
+                            <i class="fas fa-calendar-plus"></i>
+                            Created Events
+                        </a>
+                        <a href="/profile">
+                            <i class="fas fa-user-cog"></i>
+                            Profile Settings
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">
+                        Welcome back, <span id="welcomeUserName">User</span>! 👋
+                    </h1>
+                    <p class="welcome-subtitle">
+                        Ready to discover and join amazing tech events happening around you?
+                    </p>
+                    <button class="btn-hero" onclick="window.location.href='/explore'">
+                        <i class="fas fa-compass"></i>
+                        Explore Events
+                    </button>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="registeredCount">0</h3>
+                            <p>Registered Events</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="createdCount">0</h3>
+                            <p>Created Events</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h2 class="section-title">Quick Actions</h2>
+                <div class="actions-grid">
+                    <div class="action-card" onclick="window.location.href='/explore'">
+                        <div class="action-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Explore Events</h3>
+                        <p>Find and join exciting tech events</p>
+                    </div>
+                    <div class="action-card" onclick="window.location.href='/create-event'">
+                        <div class="action-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3>Create Event</h3>
+                        <p>Host your own tech event</p>
+                    </div>
+                    <div class="action-card" onclick="window.location.href='/my-events'">
+                        <div class="action-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>My Events</h3>
+                        <p>Manage events you've created</p>
+                    </div>
+                    <div class="action-card" onclick="window.location.href='/registered-events'">
+                        <div class="action-icon">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                        <h3>My Registrations</h3>
+                        <p>View your registered events</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="recent-activity">
+                <h2 class="section-title">Recent Activity</h2>
+                <div class="activity-list" id="activityList">
+                    <!-- Activity items will be loaded here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>
