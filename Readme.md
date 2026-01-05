@@ -22,6 +22,7 @@ Edit or delete events<br>
 Monitor registrations<br>
 
 # Project Structure
+```text
 techchrono/<br>
 │<br>
 ├── node_modules/<br>
